@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, Component } from "react";
+import "./test.css";
+import Test from "./test";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <Test ref={(ref) => (this.scroll = ref)} />
+        <button
+          onClick={() => {
+            this.scroll.scrollBottom();
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          맨 밑으로
+        </button>
+      </Fragment>
+    );
+  }
 }
 
 export default App;
